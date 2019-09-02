@@ -1,0 +1,73 @@
+<header id="main-header" class="py-2 bg-primary text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>
+          <i class="fas fa-users"></i> Subject</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SEARCH -->
+<section id="search" class="py-4 mb-4 bg-light">
+  <div class="container">
+    <div class="row">
+      <button type="button" class="col-md-4 ml-auto">
+        <a routerLink="add" routerLinkActive="active" class="btn btn-primary btn-block"><i class="fas fa-plus"></i>Add
+          Subject</a>
+      </button>
+      <div class="col-md-6 ml-auto">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search Subject...">
+          <div class="input-group-append">
+            <button class="btn btn-warning">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USERS -->
+<section id="users">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h4>SUBJECTS LIST</h4>
+          </div>
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Scorepass</th>
+                <th>Time</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let subject of subjects | async">
+                <td>{{subject.id}}</td>
+                <td>{{subject.subCode}}</td>
+                <td>{{subject.subName}}</td>
+                <td>{{subject.subScorepass}}</td>
+                <td>{{subject.subTime}}</td>
+                <td><button (click)="deleteSubject(subject.id)" class="btn btn-danger">Delete</button>
+                  <button (click)="subjectDetails(subject.id)" class="btn btn-info"
+                    style="margin-left: 10px">Details</button>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

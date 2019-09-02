@@ -1,0 +1,74 @@
+<header id="main-header" class="py-2 bg-warning text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>
+          <i class="fas fa-users"></i> Student</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SEARCH -->
+<section id="search" class="py-4 mb-4 bg-light">
+  <div class="container">
+    <div class="row">
+      <button type="button" class="btn btn-dark col">
+        <a routerLink="add"  routerLinkActive="active">Add Student</a>
+      </button>
+      <div class="col-md-6 ml-auto">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search Student...">
+          <div class="input-group-append">
+            <button class="btn btn-warning">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USERS -->
+<section id="users">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h4>STUDENT LIST</h4>
+          </div>
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Email</th>
+                <th>ID Card</th>
+                <th>Address</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students | async">
+                <td>{{student.id}}</td>
+                <td>{{student.stdName}}</td>
+                <td>{{student.stdCode}}</td>
+                <td>{{student.stdEmail}}</td>
+                <td>{{student.stdId}}</td>
+                <td>{{student.stdAddress}}</td>
+                <td><button (click)="deleteStudent(student.id)" class="btn btn-danger">Delete</button>
+                  <button (click)="studentDetails(student.id)" class="btn btn-info"
+                    style="margin-left: 10px">Details</button>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+           
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

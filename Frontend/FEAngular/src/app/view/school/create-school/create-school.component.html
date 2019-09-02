@@ -1,0 +1,35 @@
+<div class="container">
+    <h3>Create School</h3>
+    <div [hidden]="submitted" style="width: 400px;">
+      <form (ngSubmit)="onSubmitsch()">
+        <div class="form-group">
+          <label for="name">School Code</label>
+          <input type="text" class="form-control" id="schCode" required [(ngModel)]="school.schCode" name="schCode">
+        </div>
+  
+        <div class="form-group">
+          <label for="name">School Name</label>
+          <input type="text" class="form-control" id="schName" required [(ngModel)]="school.schName" name="schName">
+        </div>
+  
+        <div class="form-group">
+          <label for="name">Address</label>
+          <input type="text" class="form-control" id="schAddress" required [(ngModel)]="school.schAddress" name="schAddress">
+        </div>
+  
+        <div class="form-group">
+          <label for="name">Contact</label>
+          <input type="text" class="form-control" id="schContact" required [(ngModel)]="school.schContact" name="schContact">
+        </div>
+  
+       
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  
+    <div [hidden]="!submitted">
+      <h4>You submitted successfully!</h4>
+      <!-- <button class="btn btn-success" (click)="newSchool()">Add</button> -->
+    </div>
+  </div>
+  

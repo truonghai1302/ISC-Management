@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>School Details</h2>
+    <hr />
+    <div *ngIf="school">
+      <form>
+        <div class="form-group">
+            <label for="name">School Code</label>
+            <input type="text" class="form-control" id="schCode" required [(ngModel)]="school.schCode" name="schCode">
+          </div>
+    
+          <div class="form-group">
+            <label for="name">School Name</label>
+            <input type="text" class="form-control" id="schName" required [(ngModel)]="school.schName" name="schName">
+          </div>
+    
+          <div class="form-group">
+            <label for="name">Score Pass</label>
+            <input type="text" class="form-control" id="schAddress" required [(ngModel)]="school.schAddress" name="schAddress">
+          </div>
+    
+          <div class="form-group">
+            <label for="name">Contact</label>
+            <input type="text" class="form-control" id="schContact" required [(ngModel)]="school.schContact" name="schContact">
+          </div>
+        <button class="btn btn-primary" (click)="updatesch()">Update</button>
+      </form>
+      
+    </div>
+  
+    <br>
+    <br>
+    <button (click)="listsch()" class="btn btn-primary">Back to School List</button><br>
+  </div>
+  

@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Subject Details</h2>
+    <hr />
+    <div *ngIf="subject">
+      <form>
+        <div class="form-group">
+            <label for="name">Subject Code</label>
+            <input type="text" class="form-control" id="subCode" required [(ngModel)]="subject.subCode" name="subCode">
+          </div>
+    
+          <div class="form-group">
+            <label for="name">Subject Name</label>
+            <input type="text" class="form-control" id="subName" required [(ngModel)]="subject.subName" name="subName">
+          </div>
+    
+          <div class="form-group">
+            <label for="name">Score Pass</label>
+            <input type="text" class="form-control" id="subScorepass" required [(ngModel)]="subject.subScorepass" name="subScorepass">
+          </div>
+    
+          <div class="form-group">
+            <label for="name">Time</label>
+            <input type="text" class="form-control" id="subTime" required [(ngModel)]="subject.subTime" name="subTime">
+          </div>
+        <button class="btn btn-primary" (click)="updatesub()">Update</button>
+      </form>
+      
+    </div>
+  
+    <br>
+    <br>
+    <button (click)="listsub()" class="btn btn-primary">Back to Subject List</button><br>
+  </div>
+  
